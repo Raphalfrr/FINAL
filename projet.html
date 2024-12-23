@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projets - Portfolio BTS SIO</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background-attachment: fixed;
+        }
+        .card-hover:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease;
+        }
+        /* Personnalisation de la barre de défilement */
+        .scrollbar::-webkit-scrollbar {
+            width: 8px;
+            background-color: #2d2d2d;
+        }
+        .scrollbar::-webkit-scrollbar-thumb {
+            background-color: #4a4a4a;
+            border-radius: 4px;
+        }
+        .scrollbar::-webkit-scrollbar-thumb:hover {
+            background-color: #6a6a6a;
+        }
+    </style>
+</head>
+<body class="text-white pt-20">
+    <!-- Barre de navigation -->
+    <nav class="bg-white/10 backdrop-blur-md fixed w-full top-0 left-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-white">Portfolio BTS SIO</h1>
+            <ul class="flex gap-6">
+                <li><a href="Index.html" class="text-white text-lg font-semibold hover:underline">Accueil</a></li>
+                <li><a href="Compétences.html" class="text-white text-lg font-semibold hover:underline">Compétences</a></li>
+                <li><a href="Parcours.html" class="text-white text-lg font-semibold hover:underline">Parcours</a></li>
+                <li><a href="contact.html" class="text-white text-lg font-semibold hover:underline">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Contenu principal -->
+    <div class="container mx-auto px-4 py-20">
+        <header class="text-center mb-12">
+            <h1 class="text-5xl font-bold mb-4 text-white">Mes Projets</h1>
+            <p class="text-xl text-gray-200">Réalisations et travaux techniques</p>
+        </header>
+
+        <div class="grid md:grid-cols-2 gap-8">
+            <!-- Projets -->
+            <div class="bg-white/10 rounded-xl p-6 card-hover backdrop-blur-md">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="text-2xl font-semibold">Projets Détaillés</h3>
+                    <div class="relative">
+                        <button id="projetToggle" class="bg-blue-600 text-white px-4 py-2 rounded flex items-center gap-2">
+                            Catégories
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                        <div id="projetDropdown" class="absolute right-0 mt-2 w-48 bg-white/90 backdrop-blur-md rounded-lg shadow-lg hidden">
+                            <ul class="py-1">
+                                <li><a href="#" class="block px-4 py-2 hover:bg-blue-100" onclick="filterProjects('Réseau')">Réseau</a></li>
+                                <li><a href="#" class="block px-4 py-2 hover:bg-blue-100" onclick="filterProjects('Sécurité')">Sécurité</a></li>
+                                <li><a href="#" class="block px-4 py-2 hover:bg-blue-100" onclick="filterProjects('Linux')">Linux</a></li>
+                                <li><a href="#" class="block px-4 py-2 hover:bg-blue-100" onclick="filterProjects('Gestion')">Gestion</a></li>
+                                <li><a href="#" class="block px-4 py-2 hover:bg-blue-100" onclick="filterProjects('Automatisation')">Automatisation</a></li>
+                                <li><a href="#" class="block px-4 py-2 hover:bg-blue-100" onclick="filterProjects('Windows')">Windows</a></li>
+                                <li><a href="#" class="block px-4 py-2 hover:bg-blue-100" onclick="showAllProjects()">Tous les Projets</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <ul id="projetsList" class="space-y-4 overflow-y-auto max-h-80 scrollbar">
+                    <!-- Projets -->
+                    <li class="bg-blue-900/30 p-4 rounded-lg projet-item" data-categories="Réseau Sécurité">
+                        <h4 class="font-bold text-xl"> VPN - VPN IPSEC</h4>
+                        <p class="text-gray-300 mt-2">Configuration de connexions VPN sécurisées</p>
+                        <div class="mt-3 flex gap-3">
+                            <span class="bg-purple-600 px-3 py-1 rounded text-sm">Réseau</span>
+                            <span class="bg-green-600 px-3 py-1 rounded text-sm">Sécurité</span>
+                        </div>
+                    </li>
+                    <li class="bg-purple-900/30 p-4 rounded-lg projet-item" data-categories="Linux Gestion">
+                        <h4 class="font-bold text-xl">GLPI - Gestion Parc Informatique</h4>
+                        <p class="text-gray-300 mt-2">Déploiement et configuration de GLPI sur Debian pour optimisation du suivi et de la maintenance du parc informatique</p>
+                        <div class="mt-3 flex gap-3">
+                            <span class="bg-blue-600 px-3 py-1 rounded text-sm">Linux</span>
+                            <span class="bg-red-600 px-3 py-1 rounded text-sm">Gestion</span>
+                        </div>
+                    </li>
+                    <li class="bg-red-900/30 p-4 rounded-lg projet-item" data-categories="Automatisation Windows">
+                        <h4 class="font-bold text-xl"> Powershell Scripting</h4>
+                        <p class="text-gray-300 mt-2">Automatisation des taches</p>
+                        <div class="mt-3 flex gap-3">
+                            <span class="bg-gray-600 px-3 py-1 rounded text-sm">Automatisation</span>
+                            <span class="bg-yellow-600 px-3 py-1 rounded text-sm">Windows</span>
+                        </div>
+                    </li>
+                    <li class="bg-blue-900/30 p-4 rounded-lg projet-item" data-categories="Automatisation Windows">
+                        <h4 class="font-bold text-xl"> Acces Lists</h4>
+                        <p class="text-gray-300 mt-2">Création d'ACL dans une topologie Réseaux afin d'autoriser ou refuser l'accès à certains réseaux</p>
+                        <div class="mt-3 flex gap-3">
+                            <span class="bg-blue-600 px-3 py-1 rounded text-sm">Routage</span>
+                            <span class="bg-yellow-600 px-3 py-1 rounded text-sm">Réseaux</span>
+                        </div>
+                        <li class="bg-yellow-900/30 p-4 rounded-lg projet-item" data-categories="Automatisation Windows">
+                            <h4 class="font-bold text-xl"> Routage Inter - VLAN</h4>
+                            <p class="text-gray-300 mt-2">Segmentation réseaux afin d'améliorer la gestion et performances du réseaux</p>
+                            <div class="mt-3 flex gap-3">
+                                <span class="bg-blue-600 px-3 py-1 rounded text-sm">Switching</span>
+                                <span class="bg-purple-600 px-3 py-1 rounded text-sm">Réseaux</span>
+                            </div>
+                            <li class="bg-green-900/30 p-4 rounded-lg projet-item" data-categories="Automatisation Windows">
+                                <h4 class="font-bold text-xl"> ZABBIX</h4>
+                                <p class="text-gray-300 mt-2">Monitoring IT et gestion des performances des équipements </p>
+                                <div class="mt-3 flex gap-3">
+                                    <span class="bg-blue-600 px-3 py-1 rounded text-sm">Linux</span>
+                                    <span class="bg-green-600 px-3 py-1 rounded text-sm">Systèmes</span>
+                                </div>
+                                <li class="bg-orange-900/30 p-4 rounded-lg projet-item" data-categories="Automatisation Windows">
+                                    <h4 class="font-bold text-xl">protocole HSRP</h4>
+                                    <p class="text-gray-300 mt-2">Redondance réseaux facilitant la tolérance de panne des routeurs  </p>
+                                    <div class="mt-3 flex gap-3">
+                                        <span class="bg-gray-600 px-3 py-1 rounded text-sm">Routage</span>
+                                        <span class="bg-yellow-600 px-3 py-1 rounded text-sm">Réseaux</span>
+                                    </div>
+                </ul>
+            </div>
+
+            <!-- Technologies -->
+            <div class="bg-white/10 rounded-xl p-6 card-hover backdrop-blur-md">
+                <h3 class="text-2xl font-semibold mb-4">Technologies Utilisées</h3>
+                <div class="grid grid-cols-4 gap-4">
+                    <div class="bg-blue-900/20 p-4 text-center rounded-lg">
+                        <i class="fab fa-linux text-4xl text-blue-400"></i>
+                        <p class="mt-2">Linux</p>
+                    </div>
+                    <div class="bg-purple-900/20 p-4 text-center rounded-lg">
+                        <i class="fab fa-windows text-4xl text-purple-400"></i>
+                        <p class="mt-2">Windows Server</p>
+                    </div>
+                    <div class="bg-green-900/20 p-4 text-center rounded-lg">
+                        <i class="fas fa-network-wired text-4xl text-green-400"></i>
+                        <p class="mt-2">Réseaux</p>
+                    </div>
+                    <div class="bg-blue-500/20 p-4 text-center rounded-lg">
+                        <i class="fas fa-server text-4xl text-blue-500"></i>
+                        <p class="mt-2">Cisco</p>
+                    </div>
+                    <div class="bg-blue-600/20 p-4 text-center rounded-lg">
+                        <i class="fab fa-docker text-4xl text-blue-600"></i>
+                        <p class="mt-2">Docker</p>
+                    </div>
+                    <div class="bg-indigo-500/20 p-4 text-center rounded-lg">
+                        <i class="fas fa-cloud text-4xl text-indigo-500"></i>
+                        <p class="mt-2">Traefik</p>
+                    </div>
+                    <div class="bg-green-600/20 p-4 text-center rounded-lg">
+                        <i class="fas fa-cubes text-4xl text-green-600"></i>
+                        <p class="mt-2">VMWare</p>
+                    </div>
+                    <div class="bg-purple-600/20 p-4 text-center rounded-lg">
+                        <i class="fas fa-globe text-4xl text-purple-600"></i>
+                        <p class="mt-2">BIND9</p>
+                    </div>
+                    <div class="bg-red-500/20 p-4 text-center rounded-lg">
+                        <i class="fas fa-chart-line text-4xl text-red-500"></i>
+                        <p class="mt-2">Zabbix</p>
+                    </div>
+                    <div class="bg-yellow-500/20 p-4 text-center rounded-lg">
+                        <i class="fas fa-lock text-4xl text-yellow-500"></i>
+                        <p class="mt-2">ACL</p>
+                    </div>
+                    <div class="bg-blue-700/20 p-4 text-center rounded-lg">
+                        <i class="fas fa-terminal text-4xl text-blue-700"></i>
+                        <p class="mt-2">Powershell</p>
+                    </div>
+                    <div class="bg-orange-500/20 p-4 text-center rounded-lg">
+                        <i class="fas fa-shield-alt text-4xl text-orange-500"></i>
+                        <p class="mt-2">Fail2ban</p>
+                    </div>
+                    
