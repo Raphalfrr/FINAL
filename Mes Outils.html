@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio BTS SIO - Présentation des compétences techniques et professionnelles">
+    <title>Compétences - Portfolio BTS SIO</title>
+    <script src="https://cdn.tailwindcss.com" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        :root {
+            --gradient-start: #667eea;
+            --gradient-end: #764ba2;
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+            background-attachment: fixed;
+            min-height: 100vh;
+        }
+
+        .card-hover {
+            transition: transform 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: scale(1.05);
+        }
+
+        .skill-bar {
+            transition: width 0.5s ease-in-out;
+        }
+
+        .tool-icon {
+            transition: color 0.3s ease;
+        }
+
+        .tool-icon:hover {
+            filter: brightness(1.2);
+        }
+    </style>
+</head>
+
+<body class="text-white flex flex-col min-h-screen">
+    <nav class="bg-white/10 backdrop-blur-md fixed w-full top-0 left-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold">Portfolio BTS SIO</h1>
+            <ul class="flex gap-6">
+                <li><a href="Parcours.html" class="nav-link text-lg font-semibold hover:underline">Parcours</a></li>
+                <li><a href="index.html" class="nav-link text-lg font-semibold hover:underline">Accueil</a></li>
+                <li><a href="Mes outils.html" class="nav-link text-lg font-semibold hover:underline">Mes Outils</a></li>
+                <li><a href="contact.html" class="nav-link text-lg font-semibold hover:underline">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container mx-auto px-4 py-8 mt-16 flex-grow">
+        <header class="text-center mb-12">
+            <h1 class="text-5xl font-bold mb-4">Mes Compétences</h1>
+            <p class="text-xl text-gray-200">Domaines de compétence techniques</p>
+        </header>
+
+        <div class="grid md:grid-cols-2 gap-8">
+            <!-- Section Compétences Techniques -->
+            <section class="bg-white/10 rounded-xl p-6 card-hover backdrop-blur-md">
+                <h2 class="text-2xl font-semibold mb-4">Compétences Techniques</h2>
+                <div class="space-y-4">
+                    <div class="skill-item">
+                        <div class="flex justify-between mb-2">
+                            <span>Linux</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="w-full bg-gray-700 rounded-full h-2.5">
+                            <div class="skill-bar bg-blue-600 h-2.5 rounded-full" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="flex justify-between mb-2">
+                            <span>Windows Server</span>
+                            <span>75%</span>
+                        </div>
+                        <div class="w-full bg-gray-700 rounded-full h-2.5">
+                            <div class="skill-bar bg-green-600 h-2.5 rounded-full" style="width: 75%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="flex justify-between mb-2">
+                            <span>Routage & Réseaux</span>
+                            <span>65%</span>
+                        </div>
+                        <div class="w-full bg-gray-700 rounded-full h-2.5">
+                            <div class="skill-bar bg-purple-600 h-2.5 rounded-full" style="width: 65%"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section Domaines de Compétence -->
+            <section class="bg-white/10 rounded-xl p-6 card-hover backdrop-blur-md">
+                <h2 class="text-2xl font-semibold mb-4">Domaines de Compétence</h2>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="domain-card bg-blue-900/20 p-4 rounded-lg text-center">
+                        <i class="fas fa-server text-4xl text-blue-400 mb-3 tool-icon"></i>
+                        <h3 class="font-semibold">Administration Systèmes</h3>
+                    </div>
+                    <div class="domain-card bg-green-900/20 p-4 rounded-lg text-center">
+                        <i class="fas fa-network-wired text-4xl text-green-400 mb-3 tool-icon"></i>
+                        <h3 class="font-semibold">Infrastructure Réseaux</h3>
+                    </div>
+                    <div class="domain-card bg-purple-900/20 p-4 rounded-lg text-center">
+                        <i class="fas fa-lock text-4xl text-purple-400 mb-3 tool-icon"></i>
+                        <h3 class="font-semibold">Sécurité IT</h3>
+                    </div>
+                    <div class="domain-card bg-red-900/20 p-4 rounded-lg text-center">
+                        <i class="fas fa-tools text-4xl text-red-400 mb-3 tool-icon"></i>
+                        <h3 class="font-semibold">Maintenance</h3>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Section Outils et Logiciels -->
+        <section class="mt-12 bg-white/10 rounded-xl p-6 card-hover backdrop-blur-md">
+            <h2 class="text-2xl font-semibold mb-6">Outils et Logiciels</h2>
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-6">
+                <div class="tool-item flex flex-col items-center text-center">
+                    <i class="fab fa-vmware text-5xl mb-3 text-blue-400 tool-icon"></i>
+                    <span>VMWare</span>
+                </div>
+                <div class="tool-item flex flex-col items-center text-center">
+                    <i class="fas fa-network-wired text-5xl mb-3 text-green-400 tool-icon"></i>
+                    <span>Wireshark</span>
+                </div>
+                <div class="tool-item flex flex-col items-center text-center">
+                    <i class="fas fa-terminal text-5xl mb-3 text-gray-400 tool-icon"></i>
+                    <span>Putty</span>
+                </div>
+                <div class="tool-item flex flex-col items-center text-center">
+                    <i class="fas fa-code text-5xl mb-3 text-purple-400 tool-icon"></i>
+                    <span>Sublime Text</span>
+                </div>
+                <div class="tool-item flex flex-col items-center text-center">
+                    <i class="far fa-file-word text-5xl mb-3 text-blue-600 tool-icon"></i>
+                    <span>Word</span>
+                </div>
+                <div class="tool-item flex flex-col items-center text-center">
+                    <i class="fas fa-paint-brush text-5xl mb-3 text-pink-400 tool-icon"></i>
+                    <span>Canva</span>
+                </div>
+                <div class="tool-item flex flex-col items-center text-center">
+                    <i class="fas fa-users text-5xl mb-3 text-green-600 tool-icon"></i>
+                    <span>Teams</span>
+                </div>
+                <div class="tool-item flex flex-col items-center text-center">
+                    <i class="fas fa-server text-5xl mb-3 text-orange-400 tool-icon"></i>
+                    <span>VirtualBox</span>
+                </div>
+                <div class="tool-item flex flex-col items-center text-center">
+                    <i class="fas fa-network-wired text-5xl mb-3 text-teal-400 tool-icon"></i>
+                    <span>Cisco Packet Tracer</span>
+                </div>
+                <div class="tool-item flex flex-col items-center text-center">
+                    <i class="fas fa-file-upload text-5xl mb-3 text-indigo-400 tool-icon"></i>
+                    <span>WinSCP</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="text-center py-4 mt-12 opacity-70">
+        <p>© 2024 Portfolio Étudiant IT | Design Moderne</p>
+    </footer>
+</body>
+</html>
