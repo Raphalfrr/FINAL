@@ -5,195 +5,153 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio BTS SIO</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
         body {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            background-attachment: fixed;
+            background: #f5f5f5;
+        }
+        .card-hover {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
         .card-hover:hover {
-            transform: scale(1.05);
-            transition: transform 0.3s ease;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .nav-link {
+            position: relative;
+            padding-bottom: 2px;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background: #3b82f6;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .skill-bar {
+            transition: width 1s ease-in-out;
         }
     </style>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
-<body class="text-white">
+<body class="text-gray-800">
     <!-- Navigation -->
-    <nav class="bg-white/10 backdrop-blur-md fixed w-full top-0 left-0 z-50">
-        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <h1 class="text-2xl font-bold text-white">PORTFOLIO BTS SIO</h1>
-            <ul class="flex space-x-6">
-                <li><a href="Parcours.html" class="text-white text-lg font-semibold hover:underline">Parcours</a></li>
-                <li><a href="index.html" class="text-white text-lg font-semibold hover:underline">Accueil</a></li>
-                <li><a href="Mes outils.html" class="text-white text-lg font-semibold hover:underline">Mes outils</a></li>
-                <li><a href="contact.html" class="text-white text-lg font-semibold hover:underline">Contact</a></li>
-            </ul>
+    <nav class="bg-white shadow-sm fixed w-full top-0 left-0 z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <h1 class="text-xl font-medium">Portfolio Ferreira Raphael</h1>
+                <ul class="flex space-x-8">
+                    <li><a href="index.html" class="nav-link text-gray-600 hover:text-gray-900">Accueil</a></li>
+                    <li><a href="Mes outils.html" class="nav-link text-gray-600 hover:text-gray-900">Mes Outils</a></li>
+                    <li><a href="projet.html" class="nav-link text-gray-600 hover:text-gray-900">Mes Projets</a></li>
+                    <li><a href="Parcours.html" class="nav-link text-gray-600 hover:text-gray-900">Parcours</a></li>
+                    <li><a href="contact.html" class="nav-link text-gray-600 hover:text-gray-900">Contact</a></li>
+                </ul>
+            </div>
         </div>
     </nav>
 
-    <!-- Main Content -->
-    <div class="container mx-auto px-4 py-8 pt-20">
+    <!-- Contenu principal -->
+    <div class="container mx-auto px-6 pt-24 pb-12">
         <!-- Header -->
-        <header class="text-center mb-12">
-            <h1 class="text-5xl font-bold mb-4">Accueil</h1>
-            <p class="text-xl text-gray-200">Bienvenue sur mon portfolio BTS SIO</p>
+        <header class="text-center mb-16">
+            <h1 class="text-4xl font-light mb-2">Accueil</h1>
+            <p class="text-gray-600">Bienvenue sur mon portfolio BTS SIO</p>
         </header>
 
         <!-- Grid Sections -->
         <div class="grid md:grid-cols-3 gap-8">
             <!-- Profil -->
-            <div class="bg-white/10 rounded-xl p-6 card-hover backdrop-blur-md">
-                <img src="images/profile.jpg" alt="Profile" class="rounded-full mx-auto mb-4 w-48 h-48 object-cover border-4 border-purple-500">
-                <h2 class="text-2xl font-semibold text-center">Ferreira Raphael</h2>
-                <p class="text-center text-gray-300 mt-2">Étudiant en BTS SIO SISR</p>
-                <div class="flex justify-center gap-4 mt-4">
-                    <a href="https://www.linkedin.com/in/raphael-ferreira-729936234/" class="text-blue-400 hover:text-blue-600 flex items-center gap-2" target="_blank" rel="noopener noreferrer">
-                        <i class="fab fa-linkedin w-5 h-5"></i> LinkedIn
+            <div class="bg-white rounded-lg shadow-lg p-6 flex flex-col items-center card-hover">
+                <!-- Photo de profil -->
+                <img src="images/profile.jpg" alt="Profile" class="rounded-full w-32 h-32 mx-auto mb-4 object-cover">
+                
+                <!-- Nom et Profession -->
+                <h2 class="text-2xl font-semibold text-center mb-2 text-gray-800">Ferreira Raphael</h2>
+                <p class="text-center text-gray-600 mb-6">Étudiant en BTS SIO SISR</p>
+                
+                <!-- Réseaux sociaux -->
+                <div class="flex justify-center gap-8 mb-6">
+                    <a href="https://www.linkedin.com/in/raphael-ferreira-729936234/" class="text-blue-500 hover:text-blue-600" target="_blank">
+                        <i class="fab fa-linkedin text-4xl"></i>
                     </a>
-                    <a href="https://github.com/Raphalfrr" class="text-purple-400 hover:text-purple-600 flex items-center gap-2" target="_blank" rel="noopener noreferrer">
-                        <i class="fab fa-github w-5 h-5"></i> GitHub
+                    <a href="https://github.com/Raphalfrr" class="text-gray-700 hover:text-gray-900" target="_blank">
+                        <i class="fab fa-github text-4xl"></i>
                     </a>
-                        <a href="docs/CV_Raphael_Ferreira.pdf" class="text-green-400 hover:text-green-600 flex items-center gap-2" target="_blank" rel="noopener noreferrer">
-                            <i class="fas fa-file-pdf w-5 h-5"></i> Mon CV
-                        </a>
+                    <a href="docs/CV_Raphael_Ferreira.pdf" class="text-green-500 hover:text-green-600" target="_blank">
+                        <i class="fas fa-file-pdf text-4xl"></i>
+                    </a>
+                </div>
+        
+                <!-- Introduction -->
+                <div class="text-center">
+                    <p class="text-sm text-gray-700 leading-relaxed">
+                        Bienvenue sur mon portfolio !<br><br>
+                        Je suis Raphael Ferreira, étudiant en BTS SIO SISR, passionné par les nouvelles technologies et le développement informatique. Ce portfolio présente mon parcours, mes projets, ainsi que mes compétences dans le domaine de l'informatique. N'hésitez pas à explorer mes réalisations, à consulter mon CV et à me contacter si vous avez des questions ou souhaitez échanger !
+                    </p>
                 </div>
             </div>
-
             <!-- Compétences -->
-            <div class="bg-white/10 rounded-xl p-6 card-hover backdrop-blur-md">
-                <h3 class="text-2xl font-semibold mb-4">Compétences Techniques</h3>
-                <div class="space-y-3">
-                    <div class="flex items-center">
-                        <span class="w-1/3"> OS Linux</span>
-                        <div class="w-2/3 bg-gray-700 rounded-full h-2.5">
-                            <div class="bg-blue-600 h-2.5 rounded-full" style="width: 85%"></div>
-                        </div>
-                    </div>
-                    <div class="flex items-center">
-                        <span class="w-1/3">OS Windows</span>
-                        <div class="w-2/3 bg-gray-700 rounded-full h-2.5">
-                            <div class="bg-green-600 h-2.5 rounded-full" style="width: 75%"></div>
-                        </div>
-                    </div>
-                    <div class="flex items-center">
-                        <span class="w-1/3">WIN Serveur</span>
-                        <div class="w-2/3 bg-gray-700 rounded-full h-2.5">
-                            <div class="bg-purple-600 h-2.5 rounded-full" style="width: 65%"></div>
-                        </div>
-                    </div>
-                    <div class="flex items-center">
-                        <span class="w-1/3">Zabbix</span>
-                        <div class="w-2/3 bg-gray-700 rounded-full h-2.5">
-                            <div class="bg-red-600 h-2.5 rounded-full" style="width: 85%"></div>
-                        </div>
-                    </div>
-                    <div class="flex items-center">
-                        <span class="w-1/3">Docker</span>
-                        <div class="w-2/3 bg-gray-700 rounded-full h-2.5">
-                            <div class="bg-blue-600 h-2.5 rounded-full" style="width: 85%"></div>
-                        </div>
-                    </div>
-                    <div class="flex items-center">
-                        <span class="w-1/3">BIND9</span>
-                        <div class="w-2/3 bg-gray-700 rounded-full h-2.5">
-                            <div class="bg-green-600 h-2.5 rounded-full" style="width: 85%"></div>
-                        </div>
-                    </div>
-                    <div class="flex items-center">
-                        <span class="w-1/3">Traefik</span>
-                        <div class="w-2/3 bg-gray-700 rounded-full h-2.5">
-                            <div class="bg-purple-600 h-2.5 rounded-full" style="width: 85%"></div>
-                        </div>
-                    </div>
-                    <div class="flex items-center">
-                        <span class="w-1/3">Virtualisation : VMWare</span>
-                        <div class="w-2/3 bg-gray-700 rounded-full h-2.5">
-                            <div class="bg-pink-600 h-2.5 rounded-full" style="width: 85%"></div>
-                        </div>
-                    </div>
-                    <div class="flex items-center">
-                        <span class="w-1/3">HA Pacemaker</span>
-                        <div class="w-2/3 bg-gray-700 rounded-full h-2.5">
-                            <div class="bg-red-600 h-2.5 rounded-full" style="width: 85%"></div>
-                        </div>
-                    </div>
-                    <div class="flex items-center">
-                        <span class="w-1/3">Routage</span>
-                        <div class="w-2/3 bg-gray-700 rounded-full h-2.5">
-                            <div class="bg-blue-600 h-2.5 rounded-full" style="width: 85%"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Projets -->
-            <div class="bg-white/10 rounded-xl p-6 card-hover backdrop-blur-md">
-                <h3 class="text-2xl font-semibold mb-4">Projets</h3>
-                <ul class="space-y-3">
-                    <li class="bg-blue-900/30 p-3 rounded-lg">
-                        <h4 class="font-semibold">VPN IPSEC</h4>
-                        <p class="text-sm text-gray-300">Configuration d'un tunnel VPN IPSEC pour protéger les données.</p>
-                    </li>
-                    <li class="bg-purple-900/30 p-3 rounded-lg">
-                        <h4 class="font-semibold">GLPI</h4>
-                        <p class="text-sm text-gray-300">Déploiement de GLPI sur Debian pour gérer un parc informatique.</p>
-                    </li>
-                    <li class="bg-green-900/30 p-3 rounded-lg">
-                        <h4 class="font-semibold">Routage HSRP</h4>
-                        <p class="text-sm text-gray-300">Assurer la connectivité réseau avec le protocole HSRP.</p>
-                    </li>
-                </ul>
-                <a href="projet.html" class="inline-block w-full text-center mt-4 px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-bold text-lg rounded-full shadow-lg transform transition duration-300 hover:scale-105">
-                    Voir mes projets
-                </a>
-            </div>
-        </div>
-
-        <!-- Parcours et Expériences -->
-        <section class="mt-12 bg-white/10 rounded-xl p-8 backdrop-blur-md">
-            <h2 class="text-3xl font-bold mb-6">Parcours et Expériences</h2>
-            <div class="grid md:grid-cols-2 gap-6">
-                <!-- Section Formation -->
+            <div class="bg-white rounded-lg shadow-sm p-6">
+                <h3 class="text-xl font-medium mb-6">Veille Informatique</h3>
                 <div>
-                    <h3 class="text-xl font-semibold mb-4">Formation</h3>
-                    <div class="space-y-4">
-                        <div class="bg-blue-900/20 p-4 rounded-lg">
-                            <h4 class="font-bold">BTS SIO option SISR 2023-2025</h4>
-                            <p class="text-gray-300">Campus du Beaujolais</p>
-                            <span class="text-sm text-gray-400">Limas</span>
-                        </div>
-                        <div class="bg-blue-900/20 p-4 rounded-lg">
-                            <h4 class="font-bold">BAC PRO SN RISC 2020-2023</h4>
-                            <p class="text-gray-300">Lycée Louis Armand </p>
-                            <span class="text-sm text-gray-400">Villefranche-sur-Saône</span>
-                        </div>
-                    </div>
-                </div>
-        
-                <!-- Section Stages -->
-                <div>
-                    <h3 class="text-xl font-semibold mb-4">Stages</h3>
-                    <div class="space-y-4">
-                        <div class="bg-purple-900/20 p-4 rounded-lg">
-                            <h4 class="font-bold">Dépannage Informatique & Réseaux</h4>
-                            <p class="text-gray-300">LDLC Villefranche-sur-Saône</p>
-                            <span class="text-sm text-gray-400">06/01/25 au 14/02/2025</span>
-                        </div>
-                        <div class="bg-purple-900/20 p-4 rounded-lg">
-                            <h4 class="font-bold">Administration Réseaux</h4>
-                            <p class="text-gray-300">MFR Péronnas La Vernée</p>
-                            <span class="text-sm text-gray-400">28/05/24 au 28/06/2024</span>
+                    <div class="mb-4">
+                        <p class="text-sm text-gray-700 leading-relaxed mb-4">
+                            La veille informatique consiste à surveiller de manière continue les évolutions technologiques, les menaces de sécurité, et les tendances du marché. Elle vise à identifier les opportunités, anticiper les risques et s'adapter aux changements.
+                        </p>
+                        <p class="text-sm text-gray-700 leading-relaxed mb-4">
+                            Ce processus débute par la définition d'objectifs précis (technologiques, sécuritaires, concurrentiels) et le choix de sources fiables comme des sites spécialisés, des alertes, des réseaux sociaux ou des rapports d'analystes.
+                        </p>
+                        <p class="text-sm text-gray-700 leading-relaxed mb-4">
+                            L'utilisation d'outils tels que Google Alerts, les flux RSS, ou des plateformes de curation permet de centraliser l'information et d'en faciliter le filtrage. Une fois les informations recueillies, elles doivent être partagées avec les équipes sous forme de rapports ou lors de réunions régulières.
+                        </p>
+                        <p class="text-sm text-gray-700 leading-relaxed">
+                            Enfin, la veille doit mener à des actions concrètes (adoption de nouvelles technologies, renforcement de la sécurité) et être ajustée régulièrement pour rester pertinente face à l'évolution rapide du secteur.
+                        </p>
+            
+                        <div class="flex justify-between items-center text-sm mt-6">
+                            <div class="w-full bg-gray-200 h-2 rounded-full">
+                                <div class="bg-blue-500 h-full rounded-full" style="width: 85%;"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-        
+            
+            
+            <!-- Technologies -->
+            <!-- Technologies -->
+<!-- Technologies -->
+<!-- Technologies -->
+<div class="bg-white rounded-lg shadow-sm p-6 card-hover">
+    <h3 class="text-xl font-medium mb-6">Patrimoine Informatique</h3>
+    <p class="text-gray-700 leading-relaxed">
+        Le patrimoine informatique est un domaine essentiel pour comprendre l’évolution des technologies et leur impact sur notre société. 
+        Il englobe non seulement les premières machines et systèmes qui ont façonné l’informatique moderne, mais aussi les logiciels, les 
+        langages de programmation et les infrastructures qui ont permis d’ouvrir la voie à des innovations majeures.
+    </p>
+    <p class="text-gray-700 leading-relaxed mt-4">
+        À travers mon propre parcours, je présente une sélection d’éléments représentatifs de mon patrimoine informatique, 
+        des projets personnels aux outils que j’utilise au quotidien, en passant par des réalisations marquantes qui témoignent de 
+        l’importance de l’évolution technologique et de la manière dont elle façonne mon travail et ma vision du monde numérique.
+    </p>
 
-        <!-- Footer -->
-        <footer class="text-center mt-12 opacity-70">
-            <p>Portfolio Raphael | Campus du Beaujolais</p>
-        </footer>
+    <!-- Section des logos via Flaticon -->
+    <div class="mt-6 flex justify-center gap-6">
+        <i class="fi fi-rs-display-code text-4xl"></i>  <!-- Représentation d'une machine -->
+        <i class="fi fi-rs-computer text-4xl"></i>     <!-- Représentation d'un ordinateur -->
+        <i class="fi fi-rs-laptop text-4xl"></i>        <!-- Représentation d'un laptop -->
+        <i class="fi fi-rs-server text-4xl"></i>        <!-- Représentation d'un serveur -->
     </div>
+</div>
+
+
+
+
 </body>
 </html>
