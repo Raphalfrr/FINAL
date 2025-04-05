@@ -8,14 +8,14 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body {
-            background: #f5f5f5;
+            background: #f9fafb;
         }
         .card-hover {
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         .card-hover:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
         .nav-link {
             position: relative;
@@ -28,8 +28,8 @@
             height: 2px;
             bottom: 0;
             left: 0;
-            background: #3b82f6;
-            transition: width 0.3s ease;
+            background: #2563eb;
+            transition: width 0.3s ease-in-out;
         }
         .nav-link:hover::after {
             width: 100%;
@@ -38,51 +38,46 @@
 </head>
 <body class="text-gray-800">
     <!-- Navbar -->
-    <nav class="bg-white shadow-sm fixed w-full top-0 left-0 z-50">
-        <div class="container mx-auto px-6 py-4">
-            <div class="flex justify-between items-center">
-                <h1 class="text-xl font-medium">Parcours - Portfolio BTS SIO</h1>
-                <ul class="flex space-x-8">
-                    <li><a href="index.html" class="nav-link text-gray-600 hover:text-gray-900">Accueil</a></li>
-                    <li><a href="Mes outils.html" class="nav-link text-gray-600 hover:text-gray-900">Mes Outils</a></li>
-                    <li><a href="Parcours.html" class="nav-link text-gray-600 hover:text-gray-900">Parcours</a></li>
-                    <li><a href="contact.html" class="nav-link text-gray-600 hover:text-gray-900">Contact</a></li>
-                </ul>
-            </div>
+    <nav class="bg-white shadow-md fixed w-full top-0 left-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-xl font-semibold">Parcours - Portfolio BTS SIO</h1>
+            <ul class="flex space-x-6">
+                <li><a href="index.html" class="nav-link text-gray-700 hover:text-gray-900">Accueil</a></li>
+                <li><a href="Mes outils.html" class="nav-link text-gray-700 hover:text-gray-900">Mes Outils</a></li>
+                <li><a href="projet.html" class="nav-link text-gray-700 hover:text-gray-900">Mes Projets</a></li>
+                <li><a href="Parcours.html" class="nav-link text-gray-700 hover:text-gray-900">Parcours</a></li>
+                <li><a href="contact.html" class="nav-link text-gray-700 hover:text-gray-900">Contact</a></li>
+            </ul>
         </div>
     </nav>
 
     <!-- Main Content -->
     <div class="container mx-auto px-6 py-24">
-        <!-- Header -->
         <header class="text-center mb-12">
-            <h1 class="text-5xl font-bold text-gray-800 mb-4">MON PARCOURS</h1>
+            <h1 class="text-4xl font-light mb-4">Mon Parcours</h1>
             <p class="text-xl text-gray-600">Formation et Expériences Professionnelles</p>
         </header>
 
-        <!-- Grid Sections -->
         <div class="grid md:grid-cols-2 gap-8">
             <!-- Formation Section -->
-            <section class="bg-white rounded-lg shadow-sm p-6 card-hover">
+            <section class="bg-white rounded-lg shadow-md p-6 card-hover">
                 <h3 class="text-2xl font-semibold mb-6">Formation</h3>
-                <div class="space-y-4">
-                    <!-- BTS -->
-                    <article class="bg-blue-900/10 p-4 rounded-lg">
-                        <img src="images/bs.png" alt="Profile" class="mx-auto mb-4 w-34 h-24 object-cover border-4 border-purple-500">
-                        <h4 class="font-bold text-xl mb-2">BTS Services Informatique aux Organisations</h4>
-                        <p class="text-gray-600">Option SISR (Solutions d'Infrastructure, Systèmes et Réseaux)</p>
-                        <div class="flex justify-between mt-2 text-gray-400">
+                <div class="space-y-6">
+                    <article class="bg-blue-100 p-4 rounded-lg">
+                        <img src="images/bs.png" alt="BTS" class="mx-auto mb-4 w-32 h-24 object-contain border-4 border-blue-500 rounded-lg">
+                        <h4 class="font-bold text-xl mb-2">BTS Services Informatiques aux Organisations</h4>
+                        <p class="text-gray-600">Option SISR</p>
+                        <div class="flex justify-between mt-2 text-gray-500">
                             <span>Campus du Beaujolais</span>
                             <span>2023 - 2025</span>
                         </div>
                     </article>
-                    <!-- Bac Pro -->
-                    <article class="bg-purple-900/10 p-4 rounded-lg">
-                        <img src="images/LA.jpg" alt="Profile" class="mx-auto mb-4 w-34 h-34 object-cover border-4 border-purple-500">
+                    <article class="bg-purple-100 p-4 rounded-lg">
+                        <img src="images/LA.jpg" alt="Bac Pro" class="mx-auto mb-4 w-32 h-24 object-contain border-4 border-purple-500 rounded-lg">
                         <h4 class="font-bold text-xl mb-2">Bac Pro Systèmes Numériques</h4>
-                        <p class="text-gray-600">Spécialité Réseaux Infrastructure et Systèmes Communicants</p>
-                        <div class="flex justify-between mt-2 text-gray-400">
-                            <span>Lycée Louis Armand - Villefranche-Sur-Saône</span>
+                        <p class="text-gray-600">Spécialité Réseaux & Systèmes</p>
+                        <div class="flex justify-between mt-2 text-gray-500">
+                            <span>Lycée Louis Armand</span>
                             <span>2020 - 2023</span>
                         </div>
                     </article>
@@ -90,25 +85,23 @@
             </section>
 
             <!-- Stages & Expériences Section -->
-            <section class="bg-white rounded-lg shadow-sm p-6 card-hover">
+            <section class="bg-white rounded-lg shadow-md p-6 card-hover">
                 <h3 class="text-2xl font-semibold mb-6">Stages & Expériences</h3>
-                <div class="space-y-4">
-                    <!-- Stage LDLC -->
-                    <article class="bg-green-900/10 p-4 rounded-lg">
-                        <img src="images/ldlc.png" alt="LDLC" class="mx-auto mb-4 w-34 h-34 object-cover border-4 border-purple-500">
-                        <h4 class="font-bold text-xl mb-2">Stage LDLC</h4>
+                <div class="space-y-6">
+                    <article class="bg-green-100 p-4 rounded-lg">
+                        <img src="images/ldlc.png" alt="LDLC" class="mx-auto mb-4 w-32 h-24 object-contain border-4 border-green-500 rounded-lg">
+                        <a href="docs/Rapport de stage BTS SIO FIN 2 .docx" target="_blank" class="font-bold text-xl mb-2 hover:underline">Stage LDLC</a>
                         <p class="text-gray-600">Dépannage Informatique & Réseaux</p>
-                        <div class="flex justify-between mt-2 text-gray-400">
+                        <div class="flex justify-between mt-2 text-gray-500">
                             <span>Villefranche-Sur-Saône</span>
                             <span>06/01/2025 - 14/02/2025</span>
                         </div>
                     </article>
-                    <!-- Stage MFR -->
-                    <article class="bg-red-900/10 p-4 rounded-lg">
-                        <img src="images/mfr.png" alt="MFR" class="mx-auto mb-4 w-34 h-34 object-cover border-4 border-purple-500">
-                        <h4 class="font-bold text-xl mb-2">Stage MFR</h4>
+                    <article class="bg-red-100 p-4 rounded-lg">
+                        <img src="images/mfr.png" alt="MFR" class="mx-auto mb-4 w-32 h-24 object-contain border-4 border-red-500 rounded-lg">
+                        <a href="docs/Rapport de stage BTS SIO 1.docx" target="_blank" class="font-bold text-xl mb-2 hover:underline">Stage MFR</a>
                         <p class="text-gray-600">Administration Réseaux</p>
-                        <div class="flex justify-between mt-2 text-gray-400">
+                        <div class="flex justify-between mt-2 text-gray-500">
                             <span>Péronnas</span>
                             <span>28/05/2024 - 28/06/2024</span>
                         </div>
@@ -119,7 +112,7 @@
     </div>
 
     <!-- Footer -->
-    <footer class="text-center mt-16 opacity-70">
+    <footer class="text-center mt-16 text-gray-500">
         <p>© 2024 Portfolio Étudiant IT | Design Moderne</p>
     </footer>
 </body>
