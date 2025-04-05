@@ -57,6 +57,7 @@
             <ul class="flex space-x-8">
                 <li><a href="index.html" class="nav-link text-gray-600 hover:text-gray-900">Accueil</a></li>
                 <li><a href="Mes outils.html" class="nav-link text-gray-600 hover:text-gray-900">Mes Outils</a></li>
+                <li><a href="projet.html" class="nav-link text-gray-700 hover:text-gray-900">Mes Projets</a></li>
                 <li><a href="Parcours.html" class="nav-link text-gray-600 hover:text-gray-900">Parcours</a></li>
                 <li><a href="contact.html" class="nav-link text-gray-600 hover:text-gray-900">Contact</a></li>
             </ul>
@@ -93,7 +94,9 @@
 
                 <ul id="projetsList" class="space-y-4">
                     <li class="bg-blue-100 p-5 rounded-lg card-hover projet-item" data-categories="Réseau Sécurité">
-                        <h4 class="font-medium text-lg">VPN - VPN IPSEC</h4>
+                        <h4 class="font-medium text-lg">
+                            <a href="docs/TP7 VPN FERREIRA RAPHAEL (1).docx" target="_blank" class="text-blue-500 hover:underline">VPN-RADIUS</a>
+                        </h4>
                         <p class="text-gray-600 mt-2">Configuration de connexions VPN sécurisées.</p>
                         <div class="mt-3 flex gap-2">
                             <span class="tag bg-purple-600">Réseau</span>
@@ -111,40 +114,111 @@
                         </div>
                     </li>
                     <li class="bg-red-100 p-5 rounded-lg card-hover projet-item" data-categories="Automatisation Windows">
-                        <h4 class="font-medium text-lg">Powershell Scripting</h4>
-                        <p class="text-gray-600 mt-2">Automatisation des tâches avec Powershell.</p>
+                        <h4 class="font-medium text-lg">
+                            <a href="docs/TP1.RIV.RAPHAEL.FERREIRA.pka" target="_blank" class="text-blue-500 hover:underline">Protocole RIV</a>
+                        </h4>
+                        <p class="text-gray-600 mt-2">Routage et déploiement d'Inter-VLAN</p>
                         <div class="mt-3 flex gap-2">
-                            <span class="tag bg-gray-600">Automatisation</span>
-                            <span class="tag bg-yellow-600">Windows</span>
+                            <span class="tag bg-gray-600">Réseaux</span>
+                            <span class="tag bg-yellow-600">Cisco</span>
                         </div>
+                    </li>
+                    <li class="bg-blue-100 p-5 rounded-lg card-hover projet-item" data-categories="Automatisation Windows">
+                        <h4 class="font-medium text-lg">
+                            <a href="docs/Procedure_Installation_Zabbix_Debian (1).docx" target="_blank" class="text-blue-500 hover:underline">Déploiement Zabbix</a>
+                        </h4>
+                        <p class="text-gray-600 mt-2">Configuration d'un Serveur de Monitoring sous Debian</p>
+                        <div class="mt-3 flex gap-2">
+                            <span class="tag bg-gray-600">Debian</span>
+                            <span class="tag bg-red-600">Monitoring</span>
+                        </div>
+                        <li class="bg-blue-100 p-5 rounded-lg card-hover projet-item" data-categories="Automatisation Windows">
+                            <h4 class="font-medium text-lg">
+                                <a href="docs/TP2 ACL DKR Corpo (1).pdf" target="_blank" class="text-blue-500 hover:underline">Protocole ACL</a>
+                            </h4>
+                            <p class="text-gray-600 mt-2">Configuration d'Acces List dans une topologie Réseaux</p>
+                            <div class="mt-3 flex gap-2">
+                                <span class="tag bg-gray-600">Réseaux</span>
+                                <span class="tag bg-yellow-600">Putty</span>
+                            </div>
+                    
                     </li>
                 </ul>
             </div>
 
             <!-- Section Technologies -->
             <div class="bg-white rounded-lg shadow-sm p-6 card-hover">
-                <h3 class="text-xl font-medium mb-6">Technologies Utilisées</h3>
-                <div class="grid grid-cols-3 gap-4">
-                    <div class="p-4 text-center hover:bg-gray-50 rounded-lg transition">
-                        <i class="fab fa-linux text-3xl text-gray-600"></i>
-                        <p class="mt-2 text-sm text-gray-600">Linux</p>
-                    </div>
-                    <div class="p-4 text-center hover:bg-gray-50 rounded-lg transition">
-                        <i class="fab fa-windows text-3xl text-blue-600"></i>
-                        <p class="mt-2 text-sm text-gray-600">Windows Server</p>
-                    </div>
-                    <div class="p-4 text-center hover:bg-gray-50 rounded-lg transition">
-                        <i class="fas fa-network-wired text-3xl text-green-600"></i>
-                        <p class="mt-2 text-sm text-gray-600">Réseaux</p>
-                    </div>
-                    <div class="p-4 text-center hover:bg-gray-50 rounded-lg transition">
-                        <i class="fas fa-server text-3xl text-indigo-600"></i>
-                        <p class="mt-2 text-sm text-gray-600">Cisco</p>
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="text-xl font-medium"></h3>
+                    <div class="relative dropdown">
+                        <div class="dropdown-content absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg">
+                            <ul class="py-2">
+                                <li><a href="#" class="block px-4 py-2 hover:bg-blue-100" onclick="filterProjects('Réseau')">Réseau</a></li>
+                                <li><a href="#" class="block px-4 py-2 hover:bg-blue-100" onclick="filterProjects('Sécurité')">Sécurité</a></li>
+                                <li><a href="#" class="block px-4 py-2 hover:bg-blue-100" onclick="filterProjects('Linux')">Linux</a></li>
+                                <li><a href="#" class="block px-4 py-2 hover:bg-blue-100" onclick="filterProjects('Gestion')">Gestion</a></li>
+                                <li><a href="#" class="block px-4 py-2 hover:bg-blue-100" onclick="filterProjects('Automatisation')">Automatisation</a></li>
+                                <li><a href="#" class="block px-4 py-2 hover:bg-blue-100" onclick="filterProjects('Windows')">Windows</a></li>
+                                <li><a href="#" class="block px-4 py-2 hover:bg-blue-100" onclick="showAllProjects()">Tous les Projets</a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
+
+                <ul id="projetsList" class="space-y-4">
+                    <li class="bg-blue-100 p-5 rounded-lg card-hover projet-item" data-categories="Réseau Sécurité">
+                        <h4 class="font-medium text-lg">
+                            <a href="docs/HSRP_Reel_Dylan_Raphael_Regis.pdf" target="_blank" class="text-blue-500 hover:underline">Protocole HSRP</a>
+                        </h4>
+                        <p class="text-gray-600 mt-2">Configuration de connexions VPN sécurisées.</p>
+                        <div class="mt-3 flex gap-2">
+                            <span class="tag bg-purple-600">Réseau</span>
+                            <span class="tag bg-green-600">Redondance</span>
+                        </div>
+                    </li>
+                    <li class="bg-purple-100 p-5 rounded-lg card-hover projet-item" data-categories="Linux Gestion">
+                        <h4 class="font-medium text-lg">
+                            <a href="docs/TP8_Fail2ban_FERREIRARAPHAEL (1).docx" target="_blank" class="text-blue-500 hover:underline">Fail2Ban</a>
+                        </h4>
+                        <p class="text-gray-600 mt-2"></p>
+                        <div class="mt-3 flex gap-2">Banissement D'IP suspecte
+                            <span class="tag bg-blue-600">Linux</span>
+                            <span class="tag bg-red-600">Securité</span>
+                        </div>
+                    </li>
+                    <li class="bg-red-100 p-5 rounded-lg card-hover projet-item" data-categories="Automatisation Windows">
+                        <h4 class="font-medium text-lg">
+                            <a href="docs/TP9 SNMP Kais PLASSE Et Raphael .pdf" target="_blank" class="text-blue-500 hover:underline">Protocole SNMP</a>
+                        </h4>
+                        <p class="text-gray-600 mt-2">Routage et déploiement du SNMP</p>
+                        <div class="mt-3 flex gap-2">
+                            <span class="tag bg-gray-600">Réseaux</span>
+                            <span class="tag bg-yellow-600">Supervision</span>
+                        </div>
+                    </li>
+                    <li class="bg-blue-100 p-5 rounded-lg card-hover projet-item" data-categories="Automatisation Windows">
+                        <h4 class="font-medium text-lg">
+                            <a href="docs/Guide_Configuration_Docker_Raphael_Ferreira.docx" target="_blank" class="text-blue-500 hover:underline">Installation Docker</a>
+                        </h4>
+                        <p class="text-gray-600 mt-2">Configuration d'un portainer Docker</p>
+                        <div class="mt-3 flex gap-2">
+                            <span class="tag bg-gray-600">Debian</span>
+                            <span class="tag bg-red-600">Automatisation</span>
+                        </div>
+                        <li class="bg-blue-100 p-5 rounded-lg card-hover projet-item" data-categories="Automatisation Windows">
+                            <h4 class="font-medium text-lg">
+                                <a href="docs/T" target="_blank" class="text-blue-500 hover:underline">Protocole STP</a>
+                            </h4>
+                            <p class="text-gray-600 mt-2">Configuration Spanning-Tree</p>
+                            <div class="mt-3 flex gap-2">
+                                <span class="tag bg-gray-600">Réseaux</span>
+                                <span class="tag bg-yellow-600">Optimisation</span>
+                            </div>
+                    
+                    </li>
+                </ul>
             </div>
-        </div>
-    </div>
+           
 
     <script>
         function filterProjects(category) {
