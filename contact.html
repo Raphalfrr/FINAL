@@ -6,6 +6,8 @@
     <meta name="description" content="Contactez-moi via mon portfolio BTS SIO">
     <title>Contact - Portfolio BTS SIO</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Ajout de Font Awesome pour les icônes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         body {
             background: #f5f5f5;
@@ -46,6 +48,7 @@
                 <ul class="flex space-x-8">
                     <li><a href="index.html" class="nav-link text-gray-600 hover:text-gray-900">Accueil</a></li>
                     <li><a href="Mes outils.html" class="nav-link text-gray-600 hover:text-gray-900">Mes Outils</a></li>
+                    <li><a href="projet.html" class="nav-link text-gray-600 hover:text-gray-900">Mes Projets</a></li>
                     <li><a href="Parcours.html" class="nav-link text-gray-600 hover:text-gray-900">Parcours</a></li>
                     <li><a href="contact.html" class="nav-link text-gray-600 hover:text-gray-900">Contact</a></li>
                 </ul>
@@ -58,7 +61,7 @@
         <!-- Header -->
         <header class="text-center mb-16">
             <h1 class="text-4xl font-light mb-2">Contactez-moi</h1>
-            <p class="text-gray-600">Restons en contact</p>
+            <p class="text-gray-600">N'hésitez pas à me contacter !</p>
         </header>
 
         <!-- Contact Sections -->
@@ -71,14 +74,14 @@
                         <i class="fas fa-envelope text-2xl text-blue-400"></i>
                         <div>
                             <h4 class="font-semibold">Email</h4>
-                            <p class="text-gray-600">raphael.ferreira@example.com</p>
+                            <p class="text-gray-600">raphferreira1@gmail.com</p>
                         </div>
                     </div>
                     <div class="flex items-center gap-4">
                         <i class="fas fa-phone text-2xl text-green-400"></i>
                         <div>
                             <h4 class="font-semibold">Téléphone</h4>
-                            <p class="text-gray-600">+33 6 XX XX XX XX</p>
+                            <p class="text-gray-600">+33 6 69 11 98 08</p>
                         </div>
                     </div>
                     <div class="flex items-center gap-4">
@@ -94,19 +97,26 @@
             <!-- Contact Form -->
             <div class="bg-white rounded-lg shadow-sm p-6 card-hover">
                 <h3 class="text-2xl font-semibold mb-4">Formulaire de Contact</h3>
-                <form class="space-y-4">
+                <form action="https://api.web3forms.com/submit" method="POST" class="space-y-4">
+                    <!-- Clé d'accès Web3Forms -->
+                    <input type="hidden" name="access_key" value="65e5fb8c-c969-4206-af78-ce6193d3ce4d">
+                    
                     <div>
                         <label class="block mb-2 text-gray-600">Nom</label>
-                        <input type="text" class="w-full bg-white p-2 border border-gray-300 rounded-lg" placeholder="Votre nom">
+                        <input type="text" name="name" class="w-full bg-white p-2 border border-gray-300 rounded-lg" placeholder="Votre nom" required>
                     </div>
                     <div>
                         <label class="block mb-2 text-gray-600">Email</label>
-                        <input type="email" class="w-full bg-white p-2 border border-gray-300 rounded-lg" placeholder="Votre email">
+                        <input type="email" name="email" class="w-full bg-white p-2 border border-gray-300 rounded-lg" placeholder="Votre email" required>
                     </div>
                     <div>
                         <label class="block mb-2 text-gray-600">Message</label>
-                        <textarea class="w-full bg-white p-2 border border-gray-300 rounded-lg" rows="4" placeholder="Votre message"></textarea>
+                        <textarea name="message" class="w-full bg-white p-2 border border-gray-300 rounded-lg" rows="4" placeholder="Votre message" required></textarea>
                     </div>
+                    
+                    <!-- Protection anti-spam (Honeypot) -->
+                    <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+                    
                     <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 rounded-lg transition duration-300">
                         Envoyer
                     </button>
